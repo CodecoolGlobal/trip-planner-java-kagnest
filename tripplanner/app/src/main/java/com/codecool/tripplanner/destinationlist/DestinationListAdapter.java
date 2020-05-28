@@ -1,12 +1,10 @@
 package com.codecool.tripplanner.destinationlist;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.codecool.tripplanner.R;
@@ -17,12 +15,12 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class DestinationListAdapter extends RecyclerView.Adapter<DestinationListAdapter.DestViewHolder> {
 
     private final List<Destination> destList;
-    private LayoutInflater layoutInflater;
-    private Context context;
     private DestAdapterListener destAdapterListener;
 
     public DestinationListAdapter(List<Destination> destList, DestAdapterListener listener) {
@@ -43,21 +41,9 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
         Destination current = destList.get(position);
         holder.title.setText(current.getDestinationName());
 
-//Todo
         Picasso.get()
                 .load(current.getUrl())
-                .into(holder.imageView, new com.squareup.picasso.Callback(){
-
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-
-                    }
-                } );
+                .into(holder.imageView);
     }
 
     @Override
@@ -68,15 +54,16 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
     public class DestViewHolder extends RecyclerView.ViewHolder{
 
         final DestinationListAdapter adapter;
-        final TextView title;
-        final ImageView imageView;
+        @BindView(R.id.dest_title)
+        TextView title;
+        @BindView(R.id.dest_image)
+        ImageView imageView;
 
 
         public DestViewHolder(@NonNull View itemView, DestinationListAdapter adapter) {
             super(itemView);
             this.adapter = adapter;
-            title = itemView.findViewById(R.id.dest_title);
-            imageView = itemView.findViewById(R.id.dest_image);
+            ButterKnife.bind(this, itemView);
 
             title.setOnClickListener(new View.OnClickListener(){
 
