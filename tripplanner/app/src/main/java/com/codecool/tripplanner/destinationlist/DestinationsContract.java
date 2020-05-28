@@ -6,6 +6,7 @@ import com.codecool.tripplanner.data.Destination;
 
 import java.util.List;
 
+
 public interface DestinationsContract {
 
     interface View extends BaseView<Presenter>{
