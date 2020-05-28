@@ -1,10 +1,12 @@
-package com.codecool.tripplanner;
+package com.codecool.tripplanner.destinationlist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.codecool.tripplanner.R;
+
+public class DestinationListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
