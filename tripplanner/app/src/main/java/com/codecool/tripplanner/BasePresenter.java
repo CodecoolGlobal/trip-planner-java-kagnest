@@ -2,7 +2,7 @@ package com.codecool.tripplanner;
 
 public interface BasePresenter {
 
-    void subscribe();
+    void onAttach();
 
-    void unsubscribe();
+    void onDetach();
 }
