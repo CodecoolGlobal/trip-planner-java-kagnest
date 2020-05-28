@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 public class Destination {
 
     @PrimaryKey(autoGenerate = true)
-    private String id;
+    private int id;
 
     @NonNull
     @ColumnInfo(name = "dest_name")
@@ -28,7 +28,7 @@ public class Destination {
         this.coordinates = coordinates;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -45,5 +45,21 @@ public class Destination {
     @NonNull
     public String getCoordinates() {
         return coordinates;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDestinationName(@NonNull String destinationName) {
+        this.destinationName = destinationName;
+    }
+
+    public void setUrl(@NonNull String url) {
+        this.url = url;
+    }
+
+    public void setCoordinates(@NonNull String coordinates) {
+        this.coordinates = coordinates;
     }
 }

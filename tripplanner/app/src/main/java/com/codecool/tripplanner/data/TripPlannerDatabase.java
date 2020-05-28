@@ -45,7 +45,8 @@ public abstract class TripPlannerDatabase extends RoomDatabase {
 
                 Destination dest = new Destination("Paris", "https://img5.goodfon.com/wallpaper/nbig/7/81/eifeleva-bashnia-leto-parizh.jpg",  "geo:48.8566, 2.3522");
                 dao.insert(dest);
-
+                Destination dest2 = new Destination("London", "https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg",  "geo:51.5074, 0.1278");
+                dao.insert(dest2);
             });
         }
     };
