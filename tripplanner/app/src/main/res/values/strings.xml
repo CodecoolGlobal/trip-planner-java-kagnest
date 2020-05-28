@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Trip Planner</string>
+    <string name="app_title">Trip Planner</string>
+    <string name="destination_image">Destination Image</string>
 </resources>

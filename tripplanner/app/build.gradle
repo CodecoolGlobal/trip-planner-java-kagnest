@@ -50,6 +50,9 @@ dependencies {
 // UI
     implementation "com.google.android.material:material:$rootProject.materialVersion"
 
+//    Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 // Testing
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
 }
