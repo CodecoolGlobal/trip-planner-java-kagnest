@@ -2,4 +2,7 @@
     <string name="app_name">Trip Planner</string>
     <string name="app_title">Trip Planner</string>
     <string name="destination_image">Destination Image</string>
+    <string name="fab_desc">floating button to add new destination</string>
+    <string name="add_new_dest_title">Add New Destination</string>
+    <string name="destination_name_label">Destination Name:</string>
 </resources>
