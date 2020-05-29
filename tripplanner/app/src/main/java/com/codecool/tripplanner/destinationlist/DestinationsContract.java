@@ -11,7 +11,15 @@ public interface DestinationsContract {
 
     interface View extends BaseView<Presenter>{
 
+        void showLoadingScreen();
+
         void showDestinations(List<Destination> destinations);
+
+        void showEmptyList();
+
+        void removeLoadingScreen();
+
+        void showErrorMessage();
     }
 
     interface Presenter extends BasePresenter{
