@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.codecool.tripplanner.R;
 import com.codecool.tripplanner.data.Destination;
+import com.codecool.tripplanner.destinationedit.AddDestinationActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,8 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
     RecyclerView recyclerView;
     @BindView(R.id.progress_view)
     FrameLayout progressLayout;
+    @BindView(R.id.add_dest)
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,14 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
         });
         recyclerView.setAdapter(destinationListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DestinationListActivity.this, AddDestinationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
