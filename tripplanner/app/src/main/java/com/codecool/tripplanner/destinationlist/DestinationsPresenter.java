@@ -59,6 +59,11 @@ public class DestinationsPresenter implements DestinationsContract.Presenter {
         @Override
         protected List<Destination> doInBackground(Void... voids) {
             try {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 destinationList = destRepository.getDestinationList();
             } catch (Exception e) {
                 view.showErrorMessage();

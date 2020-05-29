@@ -53,7 +53,7 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
         return destList.size();
     }
 
-    public class DestViewHolder extends RecyclerView.ViewHolder{
+    public class DestViewHolder extends RecyclerView.ViewHolder {
 
         final DestinationListAdapter adapter;
         @BindView(R.id.dest_title)
@@ -67,7 +67,7 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
             this.adapter = adapter;
             ButterKnife.bind(this, itemView);
 
-            title.setOnClickListener(new View.OnClickListener(){
+            title.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {

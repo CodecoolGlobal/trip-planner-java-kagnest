@@ -58,12 +58,6 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
     @Override
     public void showLoadingScreen() {
         progressLayout.setVisibility(View.VISIBLE);
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
