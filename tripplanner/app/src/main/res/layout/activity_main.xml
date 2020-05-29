@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,12 +13,26 @@
         android:layout_height="wrap_content"
         android:text="@string/app_title" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_dest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:contentDescription="@string/fab_desc"
+        android:src="@drawable/add_button"
+        app:backgroundTint="@color/fab_bg"
+        android:layout_alignParentRight="true" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dest_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentTop="true"/>
+        android:layout_marginTop="@dimen/app_margin"
+        android:layout_alignParentTop="true">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <FrameLayout
         android:id="@+id/progress_view"
@@ -27,7 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
-        android:background="#076E6D6D"
+        android:background="@color/grey_overlay_bg"
         android:visibility="visible">
 
         <ProgressBar
@@ -38,7 +53,7 @@
             android:layout_gravity="center"
             android:indeterminate="true"
             android:visibility="visible" />
-    </FrameLayout>
 
+    </FrameLayout>
 
 </RelativeLayout>
