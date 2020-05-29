@@ -43,6 +43,8 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
 
         Picasso.get()
                 .load(current.getUrl())
+                .resizeDimen(R.dimen.image_width, R.dimen.image_height)
+                .centerCrop()
                 .into(holder.imageView);
     }
 
