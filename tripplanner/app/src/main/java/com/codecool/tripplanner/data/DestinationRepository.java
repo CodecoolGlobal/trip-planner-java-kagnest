@@ -14,7 +14,7 @@ public class DestinationRepository {
         destDao = db.destinationDao();
     }
 
-    void insert(Destination destination){
+    public void insert(Destination destination){
         TripPlannerDatabase.databaseWriteExecutor.execute(()->{
             destDao.insert(destination);
         });
