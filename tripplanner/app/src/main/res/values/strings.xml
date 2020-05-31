@@ -5,4 +5,9 @@
     <string name="fab_desc">floating button to add new destination</string>
     <string name="add_new_dest_title">Add New Destination</string>
     <string name="destination_name_label">Destination Name:</string>
+    <string name="destination_name_hint">Destination Name</string>
+    <string name="add_button_label">Save</string>
+    <string name="gps_coordinate_lat_label">GPS(latitude)</string>
+    <string name="image_url_label">https://awsome_picture.com/image</string>
+    <string name="gps_coordinate_long_label">GPS(longitude)</string>
 </resources>
