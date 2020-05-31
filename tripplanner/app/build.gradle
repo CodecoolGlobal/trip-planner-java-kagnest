@@ -62,4 +62,7 @@ dependencies {
 
 //    Awsome Validation
     implementation 'com.basgeekball:awesome-validation:4.2'
+
+//    StringUtils
+    implementation 'org.apache.commons:commons-lang3:3.9'
 }
