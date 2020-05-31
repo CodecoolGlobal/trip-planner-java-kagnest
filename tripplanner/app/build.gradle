@@ -59,4 +59,7 @@ dependencies {
 //    Butterknife
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+//    Awsome Validation
+    implementation 'com.basgeekball:awesome-validation:4.2'
 }
