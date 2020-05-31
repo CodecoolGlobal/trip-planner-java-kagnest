@@ -1,7 +1,8 @@
 package com.codecool.tripplanner.destinationlist;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +22,7 @@ import java.util.List;
 
 public class DestinationListActivity extends AppCompatActivity implements DestinationsContract.View {
 
+    private static final int ADD_DEST = 1;
     private DestinationsContract.Presenter presenter;
     private DestinationListAdapter destinationListAdapter;
     private List<Destination> destinations = new ArrayList<>();
@@ -50,14 +52,16 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
 //      TODO google maps
             }
         });
+
+        int column = getResources().getInteger(R.integer.grid_column_number);
         recyclerView.setAdapter(destinationListAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, column));
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DestinationListActivity.this, AddDestinationActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, ADD_DEST);
             }
         });
     }
@@ -101,5 +105,13 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
         presenter.onDetach();
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ADD_DEST){
+            if (resultCode == RESULT_OK){
+                presenter.loadDestinations();
+            }
+        }
+    }
 }
