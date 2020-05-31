@@ -1,6 +1,5 @@
 package com.codecool.tripplanner.destinationlist;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +42,7 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
 
         Picasso.get()
                 .load(current.getUrl())
+                .error(R.drawable.no_image)
                 .resizeDimen(R.dimen.image_width, R.dimen.image_height)
                 .centerCrop()
                 .into(holder.imageView);
