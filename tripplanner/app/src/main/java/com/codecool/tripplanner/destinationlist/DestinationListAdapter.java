@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,9 +43,8 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
 
         Picasso.get()
                 .load(current.getUrl())
-                .error(R.drawable.no_image)
-                .resizeDimen(R.dimen.image_width, R.dimen.image_height)
-                .centerCrop()
+                .error(R.drawable.noimagefound)
+                .fit()
                 .into(holder.imageView);
     }
 
@@ -60,6 +60,8 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
         TextView title;
         @BindView(R.id.dest_image)
         ImageView imageView;
+        @BindView(R.id.card_view)
+        CardView cardView;
 
 
         public DestViewHolder(@NonNull View itemView, DestinationListAdapter adapter) {
@@ -67,7 +69,7 @@ public class DestinationListAdapter extends RecyclerView.Adapter<DestinationList
             this.adapter = adapter;
             ButterKnife.bind(this, itemView);
 
-            title.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
