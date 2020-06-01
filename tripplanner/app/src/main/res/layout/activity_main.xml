@@ -8,10 +8,24 @@
     tools:context=".destinationlist.DestinationListActivity">
 
     <TextView
-        android:id="@+id/app_title"
+        android:id="@+id/empty_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_title" />
+        android:text="@string/empty_list"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@style/empty_list"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/error_msg"
+        android:text="@string/error_msg"
+        style="@style/error_msg"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_dest"
@@ -42,7 +56,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
-        android:background="@color/grey_overlay_bg"
+        android:background="@color/grey"
         android:visibility="visible">
 
         <ProgressBar
@@ -55,5 +69,7 @@
             android:visibility="visible" />
 
     </FrameLayout>
+
+
 
 </RelativeLayout>
