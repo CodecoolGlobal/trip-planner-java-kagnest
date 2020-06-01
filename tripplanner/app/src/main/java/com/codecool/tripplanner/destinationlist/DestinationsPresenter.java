@@ -7,6 +7,7 @@ import android.util.Log;
 import com.codecool.tripplanner.data.Destination;
 import com.codecool.tripplanner.data.DestinationRepository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class DestinationsPresenter implements DestinationsContract.Presenter {
 
     private DestinationRepository destRepository;
     private DestinationsContract.View destListView;
-    private List<Destination> destinationList;
+    private List<Destination> destinationList = new ArrayList<>();
 
     public DestinationsPresenter(Application application, DestinationsContract.View destListView) {
         this.destRepository = new DestinationRepository(application);

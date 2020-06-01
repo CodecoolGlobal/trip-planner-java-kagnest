@@ -30,9 +30,8 @@ public class EditDestinationPresenter implements EditDestinationContract.Present
 
     @Override
     public void addNewDestination(String destName, String imageUrl, String lat, String longitude) {
-        String coords = "geo:" + lat + ", " + longitude;
         String destNameC = StringUtils.capitalize(destName);
-        Destination destination = new Destination(destNameC, imageUrl, coords);
+        Destination destination = new Destination(destNameC, imageUrl, lat, longitude);
         try {
             destRepository.insert(destination);
         } catch (Exception e){
