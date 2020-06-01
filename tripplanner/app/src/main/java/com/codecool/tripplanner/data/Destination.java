@@ -20,12 +20,16 @@ public class Destination {
     private String url;
 
     @NonNull
-    private String coordinates;
+    private String lat;
 
-    public Destination(@NonNull String destinationName, @NonNull String url, @NonNull String coordinates) {
+    @NonNull
+    private String longitude;
+
+    public Destination(@NonNull String destinationName, @NonNull String url, @NonNull String lat, @NonNull String longitude) {
         this.destinationName = destinationName;
         this.url = url;
-        this.coordinates = coordinates;
+        this.lat = lat;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -43,8 +47,13 @@ public class Destination {
     }
 
     @NonNull
-    public String getCoordinates() {
-        return coordinates;
+    public String getLat() {
+        return lat;
+    }
+
+    @NonNull
+    public String getLongitude() {
+        return longitude;
     }
 
     public void setId(int id) {
@@ -59,7 +68,12 @@ public class Destination {
         this.url = url;
     }
 
-    public void setCoordinates(@NonNull String coordinates) {
-        this.coordinates = coordinates;
+    public void setLat(@NonNull String lat) {
+        this.lat = lat;
     }
+
+    public void setLongitude(@NonNull String longitude) {
+        this.longitude = longitude;
+    }
+
 }
