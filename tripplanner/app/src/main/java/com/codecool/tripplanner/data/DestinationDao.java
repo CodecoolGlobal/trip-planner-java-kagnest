@@ -2,7 +2,6 @@ package com.codecool.tripplanner.data;
 
 import java.util.List;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -15,7 +14,7 @@ public interface DestinationDao {
     void insert(Destination destination);
 
     @Query("SELECT * FROM dest_table ORDER BY dest_name ASC")
-    LiveData<List<Destination>> getAllDestinations();
+    List<Destination> getAllDestinations();
 
     @Query("SELECT * FROM dest_table WHERE id = :dest_id")
     Destination getDestinationById(String dest_id);
