@@ -15,9 +15,10 @@
     <string name="invalid_lat">Invalid latitude</string>
     <string name="invalid_long">Invalid longitude</string>
     <string name="form_success">Form submitted successfully!</string>
-    <string name="form_fail">Form validation failed!</string>
+    <string name="form_fail">Some data you provided were wrong!</string>
     <string name="failed_save">Destination could not be saved this time!</string>
     <string name="title_activity_maps">Map</string>
     <string name="empty_list">Your list of destinations is currently empty. \n\n Add some destinations.</string>
     <string name="error_msg">Your list of destinations could not be loaded this time. \n\n Contact, customer support!</string>
+    <string name="loading_msg">Your destinations are loading...</string>
 </resources>

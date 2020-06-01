@@ -38,6 +38,8 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
     TextView emptyListText;
     @BindView(R.id.error_msg)
     TextView errorMsg;
+    @BindView(R.id.loading_msg)
+    TextView loadingTextMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,7 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
 
     @Override
     public void showLoadingScreen() {
+        loadingTextMsg.setVisibility(View.VISIBLE);
         progressLayout.setVisibility(View.VISIBLE);
         fab.setVisibility(View.GONE);
     }
@@ -102,6 +105,7 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
 
     @Override
     public void removeLoadingScreen() {
+        loadingTextMsg.setVisibility(View.GONE);
         progressLayout.setVisibility(View.GONE);
         fab.setVisibility(View.VISIBLE);
     }
