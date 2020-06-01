@@ -11,10 +11,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.codecool.tripplanner.R;
 import com.codecool.tripplanner.data.Destination;
 import com.codecool.tripplanner.destinationedit.AddDestinationActivity;
+import com.codecool.tripplanner.destinationmap.DestinationMapActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -32,6 +34,10 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
     FrameLayout progressLayout;
     @BindView(R.id.add_dest)
     FloatingActionButton fab;
+    @BindView(R.id.empty_list)
+    TextView emptyListText;
+    @BindView(R.id.error_msg)
+    TextView errorMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +54,12 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
 
             @Override
             public void displayDestinationOnMap(View view, int position) {
-
-//      TODO google maps
+                Destination dest = destinations.get(position);
+                Intent intent = new Intent(DestinationListActivity.this, DestinationMapActivity.class);
+                intent.putExtra("name", dest.getDestinationName());
+                intent.putExtra("lat",dest.getLat() );
+                intent.putExtra("long", dest.getLongitude());
+                startActivity(intent);
             }
         });
 
@@ -75,6 +85,7 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
     @Override
     public void showLoadingScreen() {
         progressLayout.setVisibility(View.VISIBLE);
+        fab.setVisibility(View.GONE);
     }
 
     @Override
@@ -86,17 +97,18 @@ public class DestinationListActivity extends AppCompatActivity implements Destin
 
     @Override
     public void showEmptyList() {
-
+        emptyListText.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void removeLoadingScreen() {
         progressLayout.setVisibility(View.GONE);
+        fab.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void showErrorMessage() {
-
+        errorMsg.setVisibility(View.VISIBLE);
     }
 
     @Override
