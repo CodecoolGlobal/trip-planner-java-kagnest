@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Trip Planner</string>
+    <string name="app_title">Trip Planner</string>
+    <string name="destination_image">Destination Image</string>
+    <string name="fab_desc">floating button to add new destination</string>
+    <string name="add_new_dest_title">Add New Destination</string>
+    <string name="destination_name_label">Destination Name:</string>
+    <string name="destination_name_hint">Destination Name</string>
+    <string name="add_button_label">Save</string>
+    <string name="gps_coordinate_lat_label">GPS(latitude)</string>
+    <string name="image_url_label">https://awsomepicture.com/image</string>
+    <string name="gps_coordinate_long_label">GPS(longitude)</string>
+    <string name="invalid_name">Invalid name</string>
+    <string name="invalid_site">Invalid website</string>
+    <string name="invalid_lat">Invalid latitude</string>
+    <string name="invalid_long">Invalid longitude</string>
+    <string name="form_success">Form submitted successfully!</string>
+    <string name="form_fail">Form validation failed!</string>
+    <string name="failed_save">Destination could not be saved this time!</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="empty_list">Your list of destinations is currently empty. \n\n Add some destinations.</string>
+    <string name="error_msg">Your list of destinations could not be loaded this time. \n\n Contact, customer support!</string>
 </resources>
