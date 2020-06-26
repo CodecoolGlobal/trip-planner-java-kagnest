@@ -4,7 +4,7 @@
 
 You woke up today with the great plan of travelling around the whole world. After spending half an hour browsing through the available planning apps, you decide to write your own instead which will obviously be perfect. It will be a helpful solution to collect your destinations into a database, and display them on a map.
 
-#Demo Product
+## Demo Product
 ![tripplanner.gif](tripplanner.gif)
 
 ## What are you going to learn?
